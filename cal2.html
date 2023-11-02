@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #a{
+            border: 3px solid black;
+            height: 455px;
+            width: 368px;
+            margin: 20px auto;
+            border-radius: 17px;
+            background-color: grey;
+        }
+        /* #c{
+            border: 1px solid white;
+            height: 10px;
+            width: 50px;
+            align-content: center;
+        } */
+        h3{
+            text-align: center;
+            
+            
+        }
+        #print{
+            border: 2px solid black;
+            height: 70px;
+            width: 320px;
+            margin: 10px;
+            border-radius: 6px;
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+            background-color: aliceblue;
+            
+        }
+        .row{
+            border: 1px solid rgb(108, 105, 105);
+            height: 70px;
+            float:right;
+            
+            
+        }
+        .button{
+            border: 2px solid black;
+            width: 60px;
+            height: 60px;
+            margin: 6px 4px ;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            cursor: pointer;
+            
+        }
+        .button:hover{
+            background-color: aliceblue;
+        }
+        
+
+    </style>
+    <script>
+        
+        let currentInput = ""; 
+
+        function update(value) {
+        currentInput += value;
+        document.getElementById("inner").innerHTML = currentInput;
+            
+   
+}
+
+function clearDisplay() {
+    currentInput = "";
+    document.getElementById("inner").innerHTML = "0";
+}
+function calculateResult() {
+    let result = eval(currentInput); // Use eval to evaluate the expression
+    document.getElementById("inner").innerHTML = result;
+}
+function clearLastCharacter() {
+    currentInput = currentInput.slice(0, -1); // Remove the last character
+    document.getElementById("inner").innerHTML = currentInput || "0";
+}
+
+    </script>
+</head>
+<body>
+    <div id="a">
+    <div id="c"> <h3>CALCULATOR</h3></div>  
+      <div id="print"><h2 id="inner">READY TO CALCULATE</h2></div>
+        <div class="row">
+            <div class="button" onclick="clearDisplay()">
+                <center><h3 id="1">C</h3></center>
+            </div>
+            <div class="button" onclick="update('%')">
+                <center><h3 id="1">%</h3></center>
+                
+            </div>
+            <div class="button" onclick="clearLastCharacter()" >
+                <center><h3 id="1">clr</h3></center>
+            </div>
+            <div class="button" onclick="update('/')">
+                <center><h3 id="1">div</h3></center>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="button" onclick="update(7)">
+                <center><h3 id="1">7</h3></center>
+            </div>
+            <div class="button" onclick="update(8)">
+                <center><h3 id="1">8</h3></center>
+            </div>
+            <div class="button" onclick="update(9)">
+                <center><h3 id="1">9</h3></center>
+            </div>
+            <div class="button" onclick="update('*')">
+                <center><h3 id="1">multi</h3></center>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="button" onclick="update(4)">
+                <center><h3 id="1">4</h3></center>
+            </div>
+            <div class="button" onclick="update(5)">
+                <center><h3>5</h3 id="1"></center>
+            </div>
+            <div class="button" onclick="update(6)">
+                <center><h3>6</h3 id="1"></center>
+            </div>
+            <div class="button" onclick="update('-')">
+                <center><h3>sub</h3 id="1"></center>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="button" onclick="update(1)">
+                <center><h3>1</h3 id="1"></center>
+            </div>
+            <div class="button" onclick="update(2)">
+                <center><h3>2</h3 id="1"></center>
+            </div>
+            <div class="button" onclick="update(3)">
+                <center><h3>3</h3 id="1"></center>
+            </div>
+            <div class="button" onclick="update('+')">
+                <center><h3 id="1">add</h3></center>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="button" onclick="update('00')">
+                <center><h3 id="1">00</h3></center>
+            </div>
+            <div class="button" onclick="update(0)">
+                <center><h3 id="1">0</h3></center>
+            </div>
+            <div class="button" onclick="update('.')">
+                <center><h3 id="1">.</h3></center>
+            </div>
+            <div class="button" onclick="calculateResult()">
+                <center><h3 id="1">=</h3></center>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
